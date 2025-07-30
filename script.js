@@ -1,3 +1,5 @@
+/* Dato un array di oggetti rappresentante un team di un’azienda, */
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +38,26 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+/*  creare una pagina dedicata  in cui mostrare una card per ciascun componente. */
+
+const gridEl = document.querySelector(".card-grid");
+console.log(gridEl);
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
+
+  const { name, role, email, img } = member;
+
+  gridEl.innerHTML += `<div class="card">
+                <div class="card-left-side">
+                    <img src="${img}" width="120" height="120" alt="${name} - ${role}">
+                </div>
+                <div class="card-rigth-side">
+                    <h3 class="card-name">${name}</h3>
+                    <span class="card-role">${role}</span>
+                    <p class="card-mail">${email}</p>
+                </div>
+            </div>`
+
+}
